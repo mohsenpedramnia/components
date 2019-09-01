@@ -7,25 +7,30 @@ import ApprovalCard from "./ApprovalCard";
 const App = () => {
   return (
     <div className="ui container comments">
-      <ApprovalCard />
-      <CommentDetail
-        author="Sam"
-        timeAgo="Today at 4:40PM"
-        content="Nice blog post!"
-        avatar={faker.image.avatar()}
-      />
-      <CommentDetail
-        author="Alex"
-        timeAgo="Today at 2:40PM"
-        content="Good post!"
-        avatar={faker.image.avatar()}
-      />
-      <CommentDetail
-        author="Jane"
-        timeAgo="Yesterday at 4:40PM"
-        content="I like subject"
-        avatar={faker.image.avatar()}
-      />
+      <ApprovalCard>
+        <CommentDetail
+          author="Sam"
+          timeAgo="Today at 4:40PM"
+          content="Nice blog post!"
+          avatar={faker.image.avatar()}
+        />
+      </ApprovalCard>
+      <ApprovalCard>
+        <CommentDetail
+          author="Alex"
+          timeAgo="Today at 2:40PM"
+          content="Good post!"
+          avatar={faker.image.avatar()}
+        />
+      </ApprovalCard>
+      <ApprovalCard>
+        <CommentDetail
+          author="Jane"
+          timeAgo="Yesterday at 4:40PM"
+          content="I like subject"
+          avatar={faker.image.avatar()}
+        />
+      </ApprovalCard>
     </div>
   );
 };
