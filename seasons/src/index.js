@@ -6,7 +6,7 @@ class App extends React.Component {
     super(props);
     // this is THE ONLY TIME we do direct assignment
     // to this.state
-    this.state = { lat: null, errorMassage: "" };
+    this.state = { lat: null, errorMessage: "" };
 
     window.navigator.geolocation.getCurrentPosition(
       position => {
@@ -14,20 +14,20 @@ class App extends React.Component {
         this.setState({ lat: position.coords.longitude });
       },
       err => {
-        this.setState({ errorMassage: err.message });
+        this.setState({ errorMessage: err.message });
       }
     );
   }
 
   // React say we have to define render!!
   render() {
-    return (
-      <div>
-        Latitude:{this.state.lat}
-        <br />
-        Error: {this.state.errorMassage}
-      </div>
-    );
+    if (this.state.errorMessage && !this.state.lat) {
+      return <div>Error:{this.state.errorMessage}</div>;
+    }
+    if (!this.state.errorMessage && this.state.lat) {
+      return <div>Latitude: {this.state.lat}</div>;
+    }
+    return <div>Loading</div>;
   }
 }
 
