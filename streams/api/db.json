@@ -9,6 +9,12 @@
       "title": "Other Stream",
       "description": "Here's some stream",
       "id": 2
+    },
+    {
+      "title": "I Created This Stream",
+      "description": "This was made by me!",
+      "userId": "117148837915920388173",
+      "id": 3
     }
   ]
 }
