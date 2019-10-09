@@ -2,11 +2,14 @@ import React, { useState } from "react";
 import ResourceList from "./ResourceList";
 
 const App = () => {
-  const [resource, setResource] = useState("post");
+  const [resource, setResource] = useState("posts");
   return (
     <div className="ui container">
       <div>
-        <button onClick={() => setResource("post")} className="ui green button">
+        <button
+          onClick={() => setResource("posts")}
+          className="ui green button"
+        >
           Post
         </button>
         <button onClick={() => setResource("todos")} className="ui pink button">
